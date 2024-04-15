@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html translate="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue 3 </title>
+  <link rel="shortcut icon" href="/fe-assets/favicon.ico">
+  <link rel="stylesheet" href="/fe-assets/lib/fontawesome/css/all.css">
+  <link rel="stylesheet" href="/fe-assets/lib/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/fe-assets/css/all.css">
+  <script src='/fe-assets/js/popper.min.js'></script>
+  <script src='/fe-assets/lib/bootstrap/js/bootstrap.min.js'></script>
+  <script src='/fe-assets/lib/jquery/jquery.min.js'></script>
+  <script type="systemjs-importmap" src="/importmap.json"></script>
+
+<!--  <%=process.env.VUE_APP_BASE_API %>-->
+  <% if (isLocal) { %>
+  <script type="systemjs-importmap">
+    {
+      "imports": {
+        "@micro/vue3-fe-root": "//localhost:9000/vue3-fe-root.js",
+        "@mic/mic-fe-common": "//localhost:9001/mic-fe/common/mic-common.app.js"
+      }
+    }
+  </script>
+  <% } %>
+  <script src="/fe-assets/lib/import-map-overrides/import-map-overrides.js"></script>
+  <script src="/fe-assets/lib/systemjs/system.min.js"></script>
+  <script src="/fe-assets/lib/systemjs/extras/amd.min.js"></script>
+  <style>
+    .fi{
+      font-size: 1rem;
+      display: inline-block;
+      font-style: normal;
+      font-variant: normal;
+      line-height: 0 !important;
+      text-rendering: auto;
+    }
+  </style>
+</head>
+<body class="sidebar-mini "  data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+  <script>
+    System.import('@micro/vue3-fe-root');
+  </script>
+<!--  <canvas id="canvas-fireworks" width="1358" height="945">Your browser does not support the 'canvas' element.</canvas>-->
+<!--  <script src='/fe-assets/js/fireworks.js'></script>-->
+<!--  <import-map-overrides-full show-when-local-storage="devtools" dev-libs></import-map-overrides-full>-->
+</body>
+</html>

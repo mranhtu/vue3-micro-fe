@@ -1,0 +1,79 @@
+<single-spa-router>
+  <main>
+    <div class="wrapper">
+      <div id="layout-nav">
+        <application name="@mic/mic-fe-common" props="baseUrl"></application>
+      </div>
+
+      <div id="main-contents" class="main-contents-gateway">
+        <section class="content mb-0">
+          <route path="/">
+            <div></div>
+          </route>
+          <route path="assets">
+            <application name="@mic/mic-fe-assets" props="baseUrl"></application>
+          </route>
+          <route path="category">
+            <application name="@mic/mic-fe-category" props="baseUrl"></application>
+          </route>
+          <route path="vehicle">
+            <application name="@mic/mic-fe-vehicles" props="baseUrl"></application>
+          </route>
+          <route path="payment">
+            <application name="@mic/mic-fe-payments" props="baseUrl"></application>
+          </route>
+          <route path="technicals">
+            <application
+              name="@mic/mic-fe-technicals"
+              props="baseUrl"
+            ></application>
+          </route>
+          <route path="vessels">
+            <application
+              name="@mic/mic-fe-vessels"
+              props="baseUrl"
+            ></application>
+          </route>
+          <route path="personal">
+            <application
+              name="@mic/mic-fe-personal"
+              props="baseUrl"
+            ></application>
+          </route>
+          <route path="technicals">
+            <application
+              name="@mic/mic-fe-technicals"
+              props="baseUrl"
+            ></application>
+          </route>
+          <route path="payment">
+            <application
+              name="@mic/mic-fe-payments"
+              props="baseUrl"
+            ></application>
+          </route>
+          <route path="re-insured">
+            <application
+              name="@mic/mic-fe-re-insured"
+              props="baseUrl"
+            ></application>
+          </route>
+        </section>
+        <route path="no-permission">
+          <div class="content-wrapper">
+            <div class="error-404">
+              <img src="fe-assets/images/403.png" alt="403 error" />
+            </div>
+          </div>
+        </route>
+        <route default>
+          <div class="content-wrapper">
+            <div class="error-404">
+              <img src="fe-assets/images/404.png" alt="404 error" />
+            </div>
+          </div>
+        </route>
+      </div>
+    </div>
+  </main>
+</single-spa-router>
