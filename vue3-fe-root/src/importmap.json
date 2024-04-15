@@ -1,7 +1,7 @@
 {
     "imports": {
       "@micro/vue3-fe-root": "/vue3-fe-root.js",
-      "@mic/mic-fe-common": "/mic-fe/common/mic-common.app.js",
+      "@micro/vue3-fe-layout": "/micro-fe/layout/fe-layout.js",
       "single-spa": "/fe-assets/lib/single-spa/system/single-spa.min.js"
     }
   }

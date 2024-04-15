@@ -13,16 +13,8 @@ const data = {
 }
 
 const loadFns = {
-  '@mic/mic-fe-payments': () =>
-    import(/* webpackIgnore: true */ 'http://localhost:9005/mic-fe/payments/src/main.ts'),
-  '@mic/mic-fe-vessels': () =>
-    import(/* webpackIgnore: true */ 'http://localhost:9007/mic-fe/vessels/src/main.ts'),
-  '@mic/mic-fe-personal': () =>
-    import(/* webpackIgnore: true */ 'http://localhost:9008/mic-fe/personal/src/main.ts'),
-  '@mic/mic-fe-category': () =>
-    import(/* webpackIgnore: true */ 'http://localhost:9002/mic-fe/category/src/main.ts'),
-  '@mic/mic-fe-re-insured': () =>
-    import(/* webpackIgnore: true */ 'http://localhost:9009/mic-fe/re-insured/src/main.ts')
+  '@micro/vue3-fe-layout': () =>
+    import(/* webpackIgnore: true */ 'http://localhost:9001/micro-fe/layout/src/main.ts')
 };
 const routes = constructRoutes(layout, data);
 const applications = constructApplications({
