@@ -81,6 +81,7 @@ module.exports = (webpackConfigEnv, argv) => {
               to: "./fe-assets/lib/single-spa",
             },
             { from: "./src/importmap.json", to: "./importmap.json" },
+            { from: "./src/importmap-local.json", to: "./importmap-local.json" }
           ],
         }),
       ],

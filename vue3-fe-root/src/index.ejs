@@ -12,17 +12,12 @@
   <script src='/fe-assets/js/popper.min.js'></script>
   <script src='/fe-assets/lib/bootstrap/js/bootstrap.min.js'></script>
   <script src='/fe-assets/lib/jquery/jquery.min.js'></script>
-  <script type="systemjs-importmap" src="/importmap.json"></script>
 
-<!--  <%=process.env.VUE_APP_BASE_API %>-->
+  <!-- Import for build code server -->
+  <script type="systemjs-importmap" src="/importmap.json"></script>
+  <!-- Import for run code local -->
   <% if (isLocal) { %>
-  <script type="systemjs-importmap">
-    {
-      "imports": {
-        "@micro/vue3-fe-root": "//localhost:9000/vue3-fe-root.js"
-      }
-    }
-  </script>
+  <script type="systemjs-importmap" src="/importmap-local.json"></script>
   <% } %>
   <script src="/fe-assets/lib/import-map-overrides/import-map-overrides.js"></script>
   <script src="/fe-assets/lib/systemjs/system.min.js"></script>
@@ -42,8 +37,5 @@
   <script>
     System.import('@micro/vue3-fe-root');
   </script>
-<!--  <canvas id="canvas-fireworks" width="1358" height="945">Your browser does not support the 'canvas' element.</canvas>-->
-<!--  <script src='/fe-assets/js/fireworks.js'></script>-->
-<!--  <import-map-overrides-full show-when-local-storage="devtools" dev-libs></import-map-overrides-full>-->
 </body>
 </html>
