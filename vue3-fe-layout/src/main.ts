@@ -2,6 +2,7 @@ import {h, createApp} from "vue";
 import App from './App.vue'
 import singleSpaVue from "single-spa-vue";
 import '@/style.scss'
+import router from "./router/router";
 
 const vueLifecycles = singleSpaVue({
     createApp,
@@ -18,6 +19,8 @@ const vueLifecycles = singleSpaVue({
         app.config.warnHandler = function (msg, vm, trace) {
             return null;
         };
+        app.use(router)
+        .mount('#app')
     },
 });
 
