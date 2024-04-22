@@ -1,34 +1,21 @@
 <single-spa-router>
-  <main>
-    <div class="wrapper">
-      <div id="layout-nav">
-        <application name="@micro/vue3-fe-layout" props="baseUrl"></application>
-      </div>
+  <application name="@micro/vue3-fe-layout" props="baseUrl"></application>
 
-      <div id="main-contents" class="main-contents-gateway">
-        <section class="content mb-0">
-          <route path="/">
-            <div></div>
-          </route>
-<!--          <route path="assets">-->
-<!--            <application name="@mic/mic-fe-assets" props="baseUrl"></application>-->
-<!--          </route>-->
-        </section>
-        <route path="no-permission">
-          <div class="content-wrapper">
-            <div class="error-404">
-              <img src="fe-assets/images/403.png" alt="403 error" />
-            </div>
-          </div>
-        </route>
-        <route default>
-          <div class="content-wrapper">
-            <div class="error-404">
-              <img src="fe-assets/images/404.png" alt="404 error" />
-            </div>
-          </div>
-        </route>
+  <route path="/">
+    <div></div>
+  </route>
+  <route path="no-permission">
+    <div class="content-wrapper">
+      <div class="error-404">
+        <img src="fe-assets/images/403.png" alt="403 error" />
       </div>
     </div>
-  </main>
+  </route>
+  <route default>
+    <div class="content-wrapper">
+      <div class="error-404">
+        <img src="fe-assets/images/404.png" alt="404 error" />
+      </div>
+    </div>
+  </route>
 </single-spa-router>
