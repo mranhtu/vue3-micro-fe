@@ -1,21 +1,29 @@
 <single-spa-router>
-  <application name="@micro/vue3-fe-layout" props="baseUrl"></application>
+    <div>
+        <application name="@micro/vue3-fe-layout" props="baseUrl"></application>
+    </div>
 
-  <route path="/">
-    <div></div>
-  </route>
-  <route path="no-permission">
-    <div class="content-wrapper">
-      <div class="error-404">
-        <img src="fe-assets/images/403.png" alt="403 error" />
-      </div>
+    <div id="main-contents">
+        <route path="/">
+            <div></div>
+        </route>
+        <route path="angular">
+            <application name="@micro/angular-micro-fe" props="baseUrl"></application>
+        </route>
+        <route path="no-permission">
+            <div class="content-wrapper">
+                <div class="error-404">
+                    <img src="fe-assets/images/403.png" alt="403 error"/>
+                </div>
+            </div>
+        </route>
+        <route default>
+            <div class="content-wrapper">
+                <div class="error-404">
+                    <img src="fe-assets/images/404.png" alt="404 error"/>
+                </div>
+            </div>
+        </route>
     </div>
-  </route>
-  <route default>
-    <div class="content-wrapper">
-      <div class="error-404">
-        <img src="fe-assets/images/404.png" alt="404 error" />
-      </div>
-    </div>
-  </route>
+
 </single-spa-router>

@@ -2,9 +2,9 @@
   "name": "@micro/vue3-fe-root",
   "version": "0.0.1",
   "scripts": {
-    "start": "webpack serve --mode=development --port 9000 --env isLocal --open",
-    "start:pre": "cross-env APP_ENV=pre webpack serve --mode=development --port 9000 --env isLocal",
-    "start:stg": "cross-env APP_ENV=stg webpack serve --mode=development --port 9000 --env isLocal",
+    "start": "webpack serve --mode=development --port 8000 --env isLocal --open",
+    "start:pre": "cross-env APP_ENV=pre webpack serve --mode=development --port 8000 --env isLocal",
+    "start:stg": "cross-env APP_ENV=stg webpack serve --mode=development --port 8000 --env isLocal",
     "lint": "eslint src",
     "test": "jest --passWithNoTests",
     "format": "prettier --write './**'",

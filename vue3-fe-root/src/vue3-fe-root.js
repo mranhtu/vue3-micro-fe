@@ -14,7 +14,9 @@ const data = {
 
 const loadFns = {
   '@micro/vue3-fe-layout': () =>
-    import(/* webpackIgnore: true */ 'http://localhost:9001/micro-fe/layout/src/main.ts')
+    import(/* webpackIgnore: true */ 'http://localhost:8001/micro-fe/layout/src/main.ts'),
+  '@micro/angular-micro-fe': () =>
+    import(/* webpackIgnore: true */ 'http://localhost:8002/main.js')
 };
 const routes = constructRoutes(layout, data);
 const applications = constructApplications({

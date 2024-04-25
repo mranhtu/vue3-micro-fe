@@ -25,7 +25,7 @@ export default defineConfig({
   },
   base: '/micro-fe/layout',
   server: {
-    origin: 'http://localhost:9001',
+    origin: 'http://localhost:8001',
   },
   resolve: {
     alias: {

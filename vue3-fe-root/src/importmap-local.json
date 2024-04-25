@@ -1,5 +1,6 @@
 {
   "imports": {
-    "@micro/vue3-fe-root": "//localhost:9000/vue3-fe-root.js"
+    "@micro/vue3-fe-root": "//localhost:8000/vue3-fe-root.js",
+    "@micro/angular-micro-fe": "//localhost:8002/main.js"
   }
 }

@@ -15,16 +15,17 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:application",
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
             "outputPath": "dist/angular-micro-fe",
             "index": "src/index.html",
-            "browser": "src/main.ts",
+            "main": "src/main.single-spa.ts",
             "polyfills": [
               "zone.js"
             ],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
+            "aot": false,
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -32,15 +33,31 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "customWebpackConfig": {
+              "path": "./extra-webpack.config.js"
+            }
           },
           "configurations": {
             "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "sourceMap": false,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -51,21 +68,24 @@
               "outputHashing": "all"
             },
             "development": {
+              "buildOptimizer": false,
               "optimization": false,
+              "vendorChunk": true,
               "extractLicenses": false,
-              "sourceMap": true
+              "sourceMap": true,
+              "namedChunks": true
             }
           },
           "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "@angular-builders/custom-webpack:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "angular-micro-fe:build:production"
+              "browserTarget": "angular-micro-fe:build:production"
             },
             "development": {
-              "buildTarget": "angular-micro-fe:build:development"
+              "browserTarget": "angular-micro-fe:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -73,7 +93,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "angular-micro-fe:build"
+            "browserTarget": "angular-micro-fe:build"
           }
         },
         "test": {
