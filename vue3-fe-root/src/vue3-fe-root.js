@@ -16,7 +16,9 @@ const loadFns = {
   '@micro/vue3-fe-layout': () =>
     import(/* webpackIgnore: true */ 'http://localhost:8001/micro-fe/layout/src/main.ts'),
   '@micro/angular-micro-fe': () =>
-    import(/* webpackIgnore: true */ 'http://localhost:8002/main.js')
+    import(/* webpackIgnore: true */ 'http://localhost:8002/main.js'),
+  '@micro/react-micro-fe': () =>
+    import(/* webpackIgnore: true */ 'http://localhost:8003/micro-react-micro-fe.js')
 };
 const routes = constructRoutes(layout, data);
 const applications = constructApplications({
@@ -28,10 +30,13 @@ const applications = constructApplications({
     });
   },
 });
-const layoutEngine = constructLayoutEngine({ routes, applications });
+const layoutEngine = constructLayoutEngine({
+  routes,
+  applications,
+});
 
 applications?.forEach(item => {
   registerApplication(item);
 });
 layoutEngine.activate();
-start({urlRerouteOnly: true});
+start();
